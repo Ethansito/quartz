@@ -23,3 +23,6 @@ YouTube: https://www.youtube.com/channel/UCgKdXTsb9GsChzoye8ru2zQ
 ### **Flavor**
 [[Big Doors]] - Make drawbridges, sliding doors, elevators, and portcullis.
 
+### Utilities
+[[Proximity Voice Chat]] - Get put in a discord voice-chat with people you come close to in-game.
+
