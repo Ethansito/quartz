@@ -5,7 +5,7 @@
 Total War: Faith is a custom plugin that allows players to create religions. The player who creates the religion is the god, and he can recruit followers, who give him faith points by praying. Faith points can be spent to purchase blessings for followers, curses for heathens, or extra powers for the god.
 
 ## Usage
-https://www.youtube.com/watch?v=CMLi7lwL1Ec
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CMLi7lwL1Ec?si=4fiY3R6BBilrH5OK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Configuration
 ```yaml

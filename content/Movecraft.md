@@ -1,0 +1,2325 @@
+---
+title: Movecraft
+---
+## Introduction
+
+Movecraft allows players to build large-multiblock vehicles that can move, transport resources, and fight! They are compatible with [[Cannons]].
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VVbtCEfgpQY?si=I1H4EE9cpPjL4PpD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+## Usage
+
+Wiki: [https://github.com/APDevTeam/Movecraft/wiki](https://github.com/APDevTeam/Movecraft/wiki) Basic tutorial. Note: Dinghy is no longer a craft on Total War.
+## Configuration
+
+Movecraft allows us to make our own craft types, so Total War has its own crafts and requirements. Below are the type files for these crafts, which specifies things such as allowed/required blocks, speed, if the craft can fly or hover, fuel consumption, etc.
+
+### Battleship
+```yaml
+name: Battleship
+maxSize: 12000
+minSize: 4001
+allowedBlocks:
+    - "#planks"
+    - "#logs"
+    - "#glass"
+    - "#glass_panes"
+    - lapis_block
+    - dispenser
+    - note_block
+    - "#beds"
+    - sticky_piston
+    - piston
+    - observer
+    - "#wool"
+    - gold_block
+    - iron_block
+    - "#slabs"
+    - bricks
+    - bookshelf
+    - torch
+    - wall_torch
+    - fire
+    - "#stairs"
+    - "#chests"
+    - redstone_wire
+    - diamond_block
+    - crafting_table
+    - furnace
+    - blast_furnace
+    - smoker
+    - "#signs"
+    - "#doors"
+    - ladder
+    - lever
+    - "#pressure_plates"
+    - redstone_torch
+    - redstone_wall_torch
+    - "#buttons"
+    - "#fences"
+    - netherrack
+    - glowstone
+    - cake
+    - repeater
+    - "#trapdoors"
+    - "#stone_bricks"
+    - iron_bars
+    - "#fence_gates"
+    - nether_brick
+    - enchanting_table
+    - brewing_stand
+    - cauldron
+    - end_stone
+    - dragon_egg
+    - redstone_lamp
+    - ender_chest
+    - tripwire_hook
+    - tripwire
+    - emerald_block
+    - beacon
+    - "#walls"
+    - flower_pot
+    - "#heads"
+    - "#anvil"
+    - comparator
+    - daylight_detector
+    - redstone_block
+    - hopper
+    - quartz_block
+    - chiseled_quartz_block
+    - quartz_pillar
+    - smooth_quartz
+    - activator_rail
+    - dropper
+    - "#terracotta"
+    - "#concrete"
+    - slime_block
+    - "#wool_carpets"
+    - coal_block
+    - end_stone_bricks
+    - bell
+    - cartography_table
+    - composter
+    - fletching_table
+    - grindstone
+    - lantern
+    - lectern
+    - loom
+    - smithing_table
+    - stonecutter
+    - deepslate_bricks
+    - deepslate_tiles
+    - chiseled_deepslate
+    - polished_deepslate
+    - cracked_deepslate_tiles
+    - cracked_deepslate_bricks
+    - polished_blackstone
+    - polished_andesite
+    - polished_granite
+    - tuff
+    - polished_diorite
+    - tnt 
+    - end_rod
+    - diamond_block
+    - netherite_block
+    - smooth_sandstone
+    - prismarine
+    - prismarine_bricks
+    - dark_prismarine
+    - sea_lantern
+    - red_nether_bricks
+    - magma_block
+    - barrel
+    - white_banner
+    - orange_banner
+    - magenta_banner
+    - light_blue_banner
+    - yellow_banner
+    - lime_banner
+    - pink_banner
+    - gray_banner
+    - light_gray_banner
+    - cyan_banner
+    - purple_banner
+    - blue_banner
+    - brown_banner
+    - green_banner
+    - red_banner
+    - black_banner
+    - scaffolding
+    - honey_block
+    - honeycomb_block
+    - crimson_planks
+    - warped_planks
+    - crimson_stem
+    - warped_stem
+    - stripped_crimson_stem
+    - stripped_warped_stem
+    - stripped_crimson_hyphae
+    - stripped_warped_hyphae
+    - crimson_hyphae
+    - warped_hyphae
+    - polished_basalt
+    - cracked_nether_bricks
+    - chiseled_nether_bricks
+    - shroomlight
+    - lodestone
+    - target
+    - polished_blackstone
+    - chiseled_polished_blackstone
+    - polished_blackstone_bricks
+    - cracked_polished_blackstone_bricks
+    - amethyst_block
+    - calcite
+    - copper_block
+    - cut_copper
+    - dripstone_block
+    - exposed_copper
+    - exposed_cut_copper
+    - oxidized_copper
+    - oxidized_cut_copper
+    - "#candles"
+    - waxed_copper_block
+    - waxed_cut_copper
+    - waxed_exposed_copper
+    - waxed_exposed_cut_copper
+    - waxed_weathered_copper
+    - waxed_weathered_cut_copper
+    - weathered_copper
+    - weathered_cut_copper
+    - lightning_rod
+    - chain
+    - string
+    - tinted_glass
+    - campfire
+
+forbiddenBlocks:
+    - piston_head
+
+canCruise: true
+cruiseSkipBlocks: 5
+cruiseSpeed: 2
+canFly: false
+sinkPercent: 65.0
+overallSinkPercent: 60.0
+minHeightLimit: 50
+maxHeightLimit: 80
+requireWaterContact: true
+allowVerticalMovement: false
+fuelBurnRate: 4.0
+speed: 2.0
+tryNudge: false
+flyblocks:
+    ["#concrete"]:
+        - 35.0
+        - 100.0
+    "#anvil": # anvils are OP armor, so limit it
+        - 0.0
+        - 5.0
+    obsidian: # so is obsidian
+        - 0.0
+        - 2.5
+    water: # so is water
+        - 0.0
+        - 1.0
+    ["#chests", hopper, dispenser, dropper]:
+        - 0.0
+        - 2.0
+
+passthroughBlocks:
+    - kelp_plant
+    - seagrass
+    - kelp
+    - tall_seagrass
+    - bubble_column
+```
+### Boat
+```yaml
+name: Boat
+maxSize: 749
+minSize: 10
+allowedBlocks:
+    - "#planks"
+    - "#logs"
+    - "#glass"
+    - "#glass_panes"
+    - lapis_block
+    - dispenser
+    - note_block
+    - sticky_piston
+    - piston
+    - observer
+    - "#wool"
+    - gold_block
+    - iron_block
+    - "#slabs"
+    - bricks
+    - bookshelf
+    - torch
+    - wall_torch
+    - fire
+    - "#stairs"
+    - "#chests"
+    - redstone_wire
+    - diamond_block
+    - crafting_table
+    - furnace
+    - blast_furnace
+    - smoker
+    - "#signs"
+    - "#doors"
+    - ladder
+    - lever
+    - "#pressure_plates"
+    - redstone_torch
+    - redstone_wall_torch
+    - "#buttons"
+    - "#fences"
+    - glowstone
+    - cake
+    - repeater
+    - "#trapdoors"
+    - "#stone_bricks"
+    - iron_bars
+    - "#fence_gates"
+    - nether_brick
+    - enchanting_table
+    - brewing_stand
+    - cauldron
+    - end_stone
+    - dragon_egg
+    - redstone_lamp
+    - ender_chest
+    - tripwire_hook
+    - tripwire
+    - emerald_block
+    - beacon
+    - "#walls"
+    - flower_pot
+    - "#heads"
+    - "#anvil"
+    - comparator
+    - daylight_detector
+    - redstone_block
+    - hopper
+    - quartz_block
+    - chiseled_quartz_block
+    - quartz_pillar
+    - smooth_quartz
+    - activator_rail
+    - dropper
+    - "#terracotta"
+    - "#concrete"
+    - slime_block
+    - "#wool_carpets"
+    - coal_block
+    - end_stone_bricks
+    - bell
+    - cartography_table
+    - composter
+    - fletching_table
+    - grindstone
+    - lantern
+    - lectern
+    - loom
+    - smithing_table
+    - stonecutter
+    - deepslate_bricks
+    - deepslate_tiles
+    - chiseled_deepslate
+    - polished_deepslate
+    - cracked_deepslate_tiles
+    - cracked_deepslate_bricks
+    - polished_blackstone
+    - polished_andesite
+    - polished_granite
+    - tuff
+    - polished_diorite
+    - tnt 
+    - end_rod
+    - diamond_block
+    - netherite_block
+    - smooth_sandstone
+    - prismarine
+    - prismarine_bricks
+    - dark_prismarine
+    - sea_lantern
+    - red_nether_bricks
+    - magma_block
+    - barrel
+    - white_banner
+    - orange_banner
+    - magenta_banner
+    - light_blue_banner
+    - yellow_banner
+    - lime_banner
+    - pink_banner
+    - gray_banner
+    - light_gray_banner
+    - cyan_banner
+    - purple_banner
+    - blue_banner
+    - brown_banner
+    - green_banner
+    - red_banner
+    - black_banner
+    - scaffolding
+    - honey_block
+    - honeycomb_block
+    - crimson_planks
+    - warped_planks
+    - crimson_stem
+    - warped_stem
+    - stripped_crimson_stem
+    - stripped_warped_stem
+    - stripped_crimson_hyphae
+    - stripped_warped_hyphae
+    - crimson_hyphae
+    - warped_hyphae
+    - polished_basalt
+    - cracked_nether_bricks
+    - chiseled_nether_bricks
+    - shroomlight
+    - lodestone
+    - target
+    - polished_blackstone
+    - chiseled_polished_blackstone
+    - polished_blackstone_bricks
+    - cracked_polished_blackstone_bricks
+    - amethyst_block
+    - calcite
+    - copper_block
+    - cut_copper
+    - dripstone_block
+    - exposed_copper
+    - exposed_cut_copper
+    - oxidized_copper
+    - oxidized_cut_copper
+    - "#candles"
+    - waxed_copper_block
+    - waxed_cut_copper
+    - waxed_exposed_copper
+    - waxed_exposed_cut_copper
+    - waxed_weathered_copper
+    - waxed_weathered_cut_copper
+    - weathered_copper
+    - weathered_cut_copper
+    - lightning_rod
+    - chain
+    - string
+    - tinted_glass
+
+forbiddenBlocks:
+    - piston_head
+    - obsidian
+
+canCruise: true
+cruiseSpeed: 2
+cruiseSkipBlocks: 5
+canFly: false
+sinkPercent: 99.0
+overallSinkPercent: 80.0
+minHeightLimit: 0
+maxHeightLimit: 320
+requireWaterContact: true
+allowVerticalMovement: false
+speed: 2.0
+tryNudge: false
+canStaticMove: true
+flyblocks:
+    ["#planks", "#wooden_slabs"]:
+        - 40.0
+        - 100.0
+    "#anvil": # anvils are OP armor, so limit it
+        - 0.0
+        - 1.0
+    water: # so is water
+        - 0.0
+        - 1.0
+    ["#chests", hopper, dispenser, dropper]:
+        - 0.0
+        - 2.0
+passthroughBlocks:
+    - kelp_plant
+    - seagrass
+    - kelp
+    - tall_seagrass
+    - bubble_column
+
+```
+### Bomber
+```yaml
+name: Bomber
+maxSize: 500
+minSize: 351
+allowedBlocks:
+    - "#planks"
+    - "#logs"
+    - "#glass"
+    - "#glass_panes"
+    - lapis_block
+    - dispenser
+    - note_block
+    - "#beds"
+    - sticky_piston
+    - piston
+    - observer
+    - "#wool"
+    - gold_block
+    - iron_block
+    - "#slabs"
+    - bricks
+    - bookshelf
+    - torch
+    - wall_torch
+    - fire
+    - "#stairs"
+    - "#chests"
+    - redstone_wire
+    - diamond_block
+    - crafting_table
+    - furnace
+    - blast_furnace
+    - smoker
+    - "#signs"
+    - "#doors"
+    - ladder
+    - lever
+    - "#pressure_plates"
+    - redstone_torch
+    - redstone_wall_torch
+    - "#buttons"
+    - "#fences"
+    - glowstone
+    - cake
+    - repeater
+    - "#trapdoors"
+    - "#stone_bricks"
+    - iron_bars
+    - "#fence_gates"
+    - nether_brick
+    - enchanting_table
+    - brewing_stand
+    - cauldron
+    - end_stone
+    - dragon_egg
+    - redstone_lamp
+    - ender_chest
+    - tripwire_hook
+    - tripwire
+    - emerald_block
+    - beacon
+    - "#walls"
+    - flower_pot
+    - "#heads"
+    - "#anvil"
+    - comparator
+    - daylight_detector
+    - redstone_block
+    - hopper
+    - quartz_block
+    - chiseled_quartz_block
+    - quartz_pillar
+    - smooth_quartz
+    - activator_rail
+    - dropper
+    - "#terracotta"
+    - slime_block
+    - "#wool_carpets"
+    - coal_block
+    - end_stone_bricks
+    - bell
+    - cartography_table
+    - composter
+    - fletching_table
+    - grindstone
+    - lantern
+    - lectern
+    - loom
+    - smithing_table
+    - stonecutter
+    - deepslate_bricks
+    - deepslate_tiles
+    - chiseled_deepslate
+    - polished_deepslate
+    - cracked_deepslate_tiles
+    - cracked_deepslate_bricks
+    - polished_blackstone
+    - polished_andesite
+    - polished_granite
+    - tuff
+    - polished_diorite
+    - tnt 
+    - end_rod
+    - diamond_block
+    - netherite_block
+    - smooth_sandstone
+    - prismarine
+    - prismarine_bricks
+    - dark_prismarine
+    - sea_lantern
+    - red_nether_bricks
+    - magma_block
+    - barrel
+    - white_banner
+    - orange_banner
+    - magenta_banner
+    - light_blue_banner
+    - yellow_banner
+    - lime_banner
+    - pink_banner
+    - gray_banner
+    - light_gray_banner
+    - cyan_banner
+    - purple_banner
+    - blue_banner
+    - brown_banner
+    - green_banner
+    - red_banner
+    - black_banner
+    - scaffolding
+    - honey_block
+    - honeycomb_block
+    - crimson_planks
+    - warped_planks
+    - crimson_stem
+    - warped_stem
+    - stripped_crimson_stem
+    - stripped_warped_stem
+    - stripped_crimson_hyphae
+    - stripped_warped_hyphae
+    - crimson_hyphae
+    - warped_hyphae
+    - polished_basalt
+    - cracked_nether_bricks
+    - chiseled_nether_bricks
+    - shroomlight
+    - lodestone
+    - target
+    - polished_blackstone
+    - chiseled_polished_blackstone
+    - polished_blackstone_bricks
+    - cracked_polished_blackstone_bricks
+    - amethyst_block
+    - calcite
+    - copper_block
+    - cut_copper
+    - dripstone_block
+    - exposed_copper
+    - exposed_cut_copper
+    - oxidized_copper
+    - oxidized_cut_copper
+    - "#candles"
+    - waxed_copper_block
+    - waxed_cut_copper
+    - waxed_exposed_copper
+    - waxed_exposed_cut_copper
+    - waxed_weathered_copper
+    - waxed_weathered_cut_copper
+    - weathered_copper
+    - weathered_cut_copper
+    - lightning_rod
+    - chain
+    - string
+    - tinted_glass
+
+forbiddenBlocks:
+    - piston_head
+    - obsidian
+
+canFly: true
+rotateAtMidpoint: true
+canCruise: true
+cruiseSpeed: 8
+cruiseSkipBlocks: 5
+maxHeightLimit: 320
+maxHeightAboveGround: 320
+collisionExplosion: 0
+fuelBurnRate: 4.0
+explodeOnCrash: 3.0
+sinkSpeed: 5.0
+overallSinkPercent: 80.0
+detectionMultiplier: 20.0
+underwaterDetectionMultiplier: 2.0
+smokeOnSink: 4
+keepMovingOnSink: true
+speed: 40.0
+tryNudge: false
+sinkPercent: 85.0
+flyblocks:
+    ["#slabs"]:
+        - 40.0
+        - 100.0
+    redstone_lamp:
+        - 2.0
+        - 100.0
+    ["#chests", hopper, dispenser, dropper]:
+        - 0.0
+        - 3.0
+```
+### Cargo Ship
+```yaml
+name: cargoship
+maxSize: 6000
+minSize: 1000
+allowedBlocks:
+    - "#planks"
+    - "#logs"
+    - "#glass"
+    - "#glass_panes"
+    - lapis_block
+    - dispenser
+    - note_block
+    - sticky_piston
+    - piston
+    - observer
+    - "#wool"
+    - gold_block
+    - iron_block
+    - "#slabs"
+    - bricks
+    - bookshelf
+    - torch
+    - wall_torch
+    - fire
+    - "#stairs"
+    - "#chests"
+    - redstone_wire
+    - diamond_block
+    - crafting_table
+    - furnace
+    - blast_furnace
+    - smoker
+    - "#signs"
+    - "#doors"
+    - ladder
+    - lever
+    - "#pressure_plates"
+    - redstone_torch
+    - redstone_wall_torch
+    - "#buttons"
+    - "#fences"
+    - glowstone
+    - cake
+    - repeater
+    - "#trapdoors"
+    - "#stone_bricks"
+    - iron_bars
+    - "#fence_gates"
+    - nether_brick
+    - enchanting_table
+    - brewing_stand
+    - cauldron
+    - end_stone
+    - dragon_egg
+    - redstone_lamp
+    - ender_chest
+    - tripwire_hook
+    - tripwire
+    - emerald_block
+    - beacon
+    - "#walls"
+    - flower_pot
+    - "#heads"
+    - "#anvil"
+    - comparator
+    - daylight_detector
+    - redstone_block
+    - hopper
+    - quartz_block
+    - chiseled_quartz_block
+    - quartz_pillar
+    - smooth_quartz
+    - activator_rail
+    - dropper
+    - "#terracotta"
+    - "#concrete"
+    - slime_block
+    - "#wool_carpets"
+    - coal_block
+    - end_stone_bricks
+    - bell
+    - cartography_table
+    - composter
+    - fletching_table
+    - grindstone
+    - lantern
+    - lectern
+    - loom
+    - smithing_table
+    - stonecutter
+    - deepslate_bricks
+    - deepslate_tiles
+    - chiseled_deepslate
+    - polished_deepslate
+    - cracked_deepslate_tiles
+    - cracked_deepslate_bricks
+    - polished_blackstone
+    - polished_andesite
+    - polished_granite
+    - tuff
+    - polished_diorite
+    - tnt 
+    - end_rod
+    - diamond_block
+    - netherite_block
+    - smooth_sandstone
+    - prismarine
+    - prismarine_bricks
+    - dark_prismarine
+    - sea_lantern
+    - red_nether_bricks
+    - magma_block
+    - barrel
+    - white_banner
+    - orange_banner
+    - magenta_banner
+    - light_blue_banner
+    - yellow_banner
+    - lime_banner
+    - pink_banner
+    - gray_banner
+    - light_gray_banner
+    - cyan_banner
+    - purple_banner
+    - blue_banner
+    - brown_banner
+    - green_banner
+    - red_banner
+    - black_banner
+    - scaffolding
+    - honey_block
+    - honeycomb_block
+    - crimson_planks
+    - warped_planks
+    - crimson_stem
+    - warped_stem
+    - stripped_crimson_stem
+    - stripped_warped_stem
+    - stripped_crimson_hyphae
+    - stripped_warped_hyphae
+    - crimson_hyphae
+    - warped_hyphae
+    - polished_basalt
+    - cracked_nether_bricks
+    - chiseled_nether_bricks
+    - shroomlight
+    - lodestone
+    - target
+    - polished_blackstone
+    - chiseled_polished_blackstone
+    - polished_blackstone_bricks
+    - cracked_polished_blackstone_bricks
+    - amethyst_block
+    - calcite
+    - copper_block
+    - cut_copper
+    - dripstone_block
+    - exposed_copper
+    - exposed_cut_copper
+    - oxidized_copper
+    - oxidized_cut_copper
+    - "#candles"
+    - waxed_copper_block
+    - waxed_cut_copper
+    - waxed_exposed_copper
+    - waxed_exposed_cut_copper
+    - waxed_weathered_copper
+    - waxed_weathered_cut_copper
+    - weathered_copper
+    - weathered_cut_copper
+    - lightning_rod
+    - chain
+    - string
+    - tinted_glass
+    
+forbiddenBlocks:
+    - piston_head
+    - obsidian
+
+CanDirectControl: false
+canFly: false
+rotateAtMidpoint: true
+canCruise: true
+cruiseSpeed: 4
+cruiseSkipBlocks: 5
+minHeightLimit: 0
+maxHeightLimit: 320
+maxHeightAboveGround: 320
+collisionExplosion: 0.0
+fuelBurnRate: 1.0
+explodeOnCrash: 1.0
+sinkSpeed: 3.0
+overallSinkPercent: 65.0
+detectionMultiplier: 20.0
+underwaterDetectionMultiplier: 2.0
+smokeOnSink: 4
+keepMovingOnSink: false
+speed: 2.0
+tryNudge: false
+sinkPercent: 65.0
+flyblocks:
+    ["#concrete"]:
+        - 40.0
+        - 100.0
+    ["#chests", hopper, dispenser, dropper]:
+        - 0.0
+        - 5.0
+    ["black_wool"]:
+        - 0.0
+        - 0.5
+passthroughBlocks:
+    - kelp_plant
+    - seagrass
+    - kelp
+    - tall_seagrass
+    - bubble_column
+```
+### Corvette
+```yaml
+name: Corvette
+maxSize: 1500
+minSize: 750
+allowedBlocks:
+    - "#planks"
+    - "#logs"
+    - "#glass"
+    - "#glass_panes"
+    - lapis_block
+    - dispenser
+    - note_block
+    - sticky_piston
+    - piston
+    - observer
+    - "#wool"
+    - gold_block
+    - iron_block
+    - "#slabs"
+    - bricks
+    - bookshelf
+    - torch
+    - wall_torch
+    - fire
+    - "#stairs"
+    - "#chests"
+    - redstone_wire
+    - diamond_block
+    - crafting_table
+    - furnace
+    - blast_furnace
+    - smoker
+    - "#signs"
+    - "#doors"
+    - ladder
+    - lever
+    - "#pressure_plates"
+    - redstone_torch
+    - redstone_wall_torch
+    - "#buttons"
+    - "#fences"
+    - glowstone
+    - cake
+    - repeater
+    - "#trapdoors"
+    - "#stone_bricks"
+    - iron_bars
+    - "#fence_gates"
+    - nether_brick
+    - enchanting_table
+    - brewing_stand
+    - cauldron
+    - end_stone
+    - dragon_egg
+    - redstone_lamp
+    - ender_chest
+    - tripwire_hook
+    - tripwire
+    - emerald_block
+    - beacon
+    - "#walls"
+    - flower_pot
+    - "#heads"
+    - "#anvil"
+    - comparator
+    - daylight_detector
+    - redstone_block
+    - hopper
+    - quartz_block
+    - chiseled_quartz_block
+    - quartz_pillar
+    - smooth_quartz
+    - activator_rail
+    - dropper
+    - "#terracotta"
+    - "#concrete"
+    - slime_block
+    - "#wool_carpets"
+    - coal_block
+    - end_stone_bricks
+    - bell
+    - cartography_table
+    - composter
+    - fletching_table
+    - grindstone
+    - lantern
+    - lectern
+    - loom
+    - smithing_table
+    - stonecutter
+    - deepslate_bricks
+    - deepslate_tiles
+    - chiseled_deepslate
+    - polished_deepslate
+    - cracked_deepslate_tiles
+    - cracked_deepslate_bricks
+    - polished_blackstone
+    - polished_andesite
+    - polished_granite
+    - tuff
+    - polished_diorite
+    - tnt 
+    - end_rod
+    - diamond_block
+    - netherite_block
+    - smooth_sandstone
+    - prismarine
+    - prismarine_bricks
+    - dark_prismarine
+    - sea_lantern
+    - red_nether_bricks
+    - magma_block
+    - barrel
+    - white_banner
+    - orange_banner
+    - magenta_banner
+    - light_blue_banner
+    - yellow_banner
+    - lime_banner
+    - pink_banner
+    - gray_banner
+    - light_gray_banner
+    - cyan_banner
+    - purple_banner
+    - blue_banner
+    - brown_banner
+    - green_banner
+    - red_banner
+    - black_banner
+    - scaffolding
+    - honey_block
+    - honeycomb_block
+    - crimson_planks
+    - warped_planks
+    - crimson_stem
+    - warped_stem
+    - stripped_crimson_stem
+    - stripped_warped_stem
+    - stripped_crimson_hyphae
+    - stripped_warped_hyphae
+    - crimson_hyphae
+    - warped_hyphae
+    - polished_basalt
+    - cracked_nether_bricks
+    - chiseled_nether_bricks
+    - shroomlight
+    - lodestone
+    - target
+    - polished_blackstone
+    - chiseled_polished_blackstone
+    - polished_blackstone_bricks
+    - cracked_polished_blackstone_bricks
+    - amethyst_block
+    - calcite
+    - copper_block
+    - cut_copper
+    - dripstone_block
+    - exposed_copper
+    - exposed_cut_copper
+    - oxidized_copper
+    - oxidized_cut_copper
+    - "#candles"
+    - waxed_copper_block
+    - waxed_cut_copper
+    - waxed_exposed_copper
+    - waxed_exposed_cut_copper
+    - waxed_weathered_copper
+    - waxed_weathered_cut_copper
+    - weathered_copper
+    - weathered_cut_copper
+    - lightning_rod
+    - chain
+    - string
+    - tinted_glass
+    
+forbiddenBlocks:
+    - piston_head
+    - obsidian
+
+CanDirectControl: false
+canFly: false
+rotateAtMidpoint: true
+canCruise: true
+cruiseSpeed: 5
+cruiseSkipBlocks: 5
+maxHeightLimit: 320
+maxHeightAboveGround: 320
+collisionExplosion: 0.0
+fuelBurnRate: 1.0
+explodeOnCrash: 1.0
+sinkSpeed: 3.0
+overallSinkPercent: 65.0
+detectionMultiplier: 20.0
+underwaterDetectionMultiplier: 2.0
+smokeOnSink: 4
+keepMovingOnSink: false
+speed: 2.0
+tryNudge: false
+sinkPercent: 65.0
+flyblocks:
+    ["#concrete"]:
+        - 30.0
+        - 100.0
+    redstone_block:
+        - 2.0
+        - 100.0
+    ["#chests", hopper, dispenser, dropper]:
+        - 0.0
+        - 2.0
+passthroughBlocks:
+    - kelp_plant
+    - seagrass
+    - kelp
+    - tall_seagrass
+    - bubble_column
+```
+### Destroyer
+```yaml
+name: Destroyer
+maxSize: 4000
+minSize: 1000
+allowedBlocks:
+    - "#planks"
+    - "#logs"
+    - "#glass"
+    - "#glass_panes"
+    - lapis_block
+    - dispenser
+    - note_block
+    - sticky_piston
+    - piston
+    - observer
+    - "#wool"
+    - gold_block
+    - iron_block
+    - "#slabs"
+    - bricks
+    - bookshelf
+    - torch
+    - wall_torch
+    - fire
+    - "#stairs"
+    - "#chests"
+    - redstone_wire
+    - diamond_block
+    - crafting_table
+    - furnace
+    - blast_furnace
+    - smoker
+    - "#signs"
+    - "#doors"
+    - ladder
+    - lever
+    - "#pressure_plates"
+    - redstone_torch
+    - redstone_wall_torch
+    - "#buttons"
+    - "#fences"
+    - glowstone
+    - cake
+    - repeater
+    - "#trapdoors"
+    - "#stone_bricks"
+    - iron_bars
+    - "#fence_gates"
+    - nether_brick
+    - enchanting_table
+    - brewing_stand
+    - cauldron
+    - end_stone
+    - dragon_egg
+    - redstone_lamp
+    - ender_chest
+    - tripwire_hook
+    - tripwire
+    - emerald_block
+    - beacon
+    - "#walls"
+    - flower_pot
+    - "#heads"
+    - "#anvil"
+    - comparator
+    - daylight_detector
+    - redstone_block
+    - hopper
+    - quartz_block
+    - chiseled_quartz_block
+    - quartz_pillar
+    - smooth_quartz
+    - activator_rail
+    - dropper
+    - "#terracotta"
+    - "#glazed_terracotta"
+    - "#concrete"
+    - slime_block
+    - "#wool_carpets"
+    - coal_block
+    - end_stone_bricks
+    - bell
+    - cartography_table
+    - composter
+    - fletching_table
+    - grindstone
+    - lantern
+    - lectern
+    - loom
+    - smithing_table
+    - stonecutter
+    - deepslate_bricks
+    - deepslate_tiles
+    - chiseled_deepslate
+    - polished_deepslate
+    - cracked_deepslate_tiles
+    - cracked_deepslate_bricks
+    - polished_blackstone
+    - polished_andesite
+    - polished_granite
+    - tuff
+    - polished_diorite
+    - tnt 
+    - end_rod
+    - diamond_block
+    - netherite_block
+    - smooth_sandstone
+    - prismarine
+    - prismarine_bricks
+    - dark_prismarine
+    - sea_lantern
+    - red_nether_bricks
+    - magma_block
+    - barrel
+    - white_banner
+    - orange_banner
+    - magenta_banner
+    - light_blue_banner
+    - yellow_banner
+    - lime_banner
+    - pink_banner
+    - gray_banner
+    - light_gray_banner
+    - cyan_banner
+    - purple_banner
+    - blue_banner
+    - brown_banner
+    - green_banner
+    - red_banner
+    - black_banner
+    - scaffolding
+    - honey_block
+    - honeycomb_block
+    - crimson_planks
+    - warped_planks
+    - crimson_stem
+    - warped_stem
+    - stripped_crimson_stem
+    - stripped_warped_stem
+    - stripped_crimson_hyphae
+    - stripped_warped_hyphae
+    - crimson_hyphae
+    - warped_hyphae
+    - polished_basalt
+    - cracked_nether_bricks
+    - chiseled_nether_bricks
+    - shroomlight
+    - lodestone
+    - target
+    - polished_blackstone
+    - chiseled_polished_blackstone
+    - polished_blackstone_bricks
+    - cracked_polished_blackstone_bricks
+    - amethyst_block
+    - calcite
+    - copper_block
+    - cut_copper
+    - dripstone_block
+    - exposed_copper
+    - exposed_cut_copper
+    - oxidized_copper
+    - oxidized_cut_copper
+    - "#candles"
+    - waxed_copper_block
+    - waxed_cut_copper
+    - waxed_exposed_copper
+    - waxed_exposed_cut_copper
+    - waxed_weathered_copper
+    - waxed_weathered_cut_copper
+    - weathered_copper
+    - weathered_cut_copper
+    - lightning_rod
+    - chain
+    - string
+    - tinted_glass
+    - campfire
+
+forbiddenBlocks:
+    - piston_head
+
+canCruise: true
+cruiseSkipBlocks: 5
+cruiseSpeed: 3
+canFly: false
+sinkPercent: 65.0
+overallSinkPercent: 65.0
+minHeightLimit: 0
+maxHeightLimit: 320
+fuelBurnRate: 1.25
+sinkSpeed: 3.0
+keepMovingOnSink: false
+explodeOnCrash: 1.0
+smokeOnSink: 4
+requireWaterContact: true
+allowVerticalMovement: false
+speed: 2.0
+tryNudge: false
+flyblocks:
+    ["#concrete"]:
+        - 35.0
+        - 100.0
+    redstone_block:
+        - 1.0
+        - 100.0
+    ["#chests", hopper, dispenser, dropper]:
+        - 0.0
+        - 2.0
+passthroughBlocks:
+    - kelp_plant
+    - seagrass
+    - kelp
+    - tall_seagrass
+    - bubble_column
+```
+### Elevator
+```yaml
+name: elevator
+maxSize: 1000
+minSize: 10
+allowedBlocks:
+    - "#planks"
+    - "#logs"
+    - "#glass"
+    - "#glass_panes"
+    - lapis_block
+    - dispenser
+    - note_block
+    - sticky_piston
+    - piston
+    - observer
+    - "#wool"
+    - gold_block
+    - iron_block
+    - "#slabs"
+    - bricks
+    - bookshelf
+    - torch
+    - fire
+    - "#stairs"
+    - "#chests"
+    - redstone_wire
+    - diamond_block
+    - crafting_table
+    - furnace
+    - blast_furnace
+    - smoker
+    - "#signs"
+    - "#doors"
+    - ladder
+    - lever
+    - "#pressure_plates"
+    - redstone_torch
+    - redstone_wall_torch
+    - "#buttons"
+    - "#fences"
+    - glowstone
+    - cake
+    - repeater
+    - "#trapdoors"
+    - "#stone_bricks"
+    - iron_bars
+    - "#fence_gates"
+    - nether_brick
+    - enchanting_table
+    - brewing_stand
+    - cauldron
+    - end_stone
+    - dragon_egg
+    - redstone_lamp
+    - ender_chest
+    - tripwire_hook
+    - tripwire
+    - emerald_block
+    - beacon
+    - "#walls"
+    - flower_pot
+    - "#heads"
+    - "#anvil"
+    - comparator
+    - daylight_detector
+    - redstone_block
+    - hopper
+    - quartz_block
+    - chiseled_quartz_block
+    - quartz_pillar
+    - smooth_quartz
+    - activator_rail
+    - dropper
+    - "#terracotta"
+    - "#concrete"
+    - slime_block
+    - "#wool_carpets"
+    - coal_block
+    - end_stone_bricks
+    - bell
+    - cartography_table
+    - composter
+    - fletching_table
+    - grindstone
+    - lantern
+    - lectern
+    - loom
+    - smithing_table
+    - stonecutter
+    - deepslate_bricks
+    - deepslate_tiles
+    - chiseled_deepslate
+    - polished_deepslate
+    - cracked_deepslate_tiles
+    - cracked_deepslate_bricks
+    - polished_blackstone
+    - polished_andesite
+    - polished_granite
+    - tuff
+    - polished_diorite
+    - tnt 
+    - end_rod
+    - diamond_block
+    - netherite_block
+    - smooth_sandstone
+    - prismarine
+    - prismarine_bricks
+    - dark_prismarine
+    - sea_lantern
+    - red_nether_bricks
+    - magma_block
+    - barrel
+    - white_banner
+    - orange_banner
+    - magenta_banner
+    - light_blue_banner
+    - yellow_banner
+    - lime_banner
+    - pink_banner
+    - gray_banner
+    - light_gray_banner
+    - cyan_banner
+    - purple_banner
+    - blue_banner
+    - brown_banner
+    - green_banner
+    - red_banner
+    - black_banner
+    - scaffolding
+    - honey_block
+    - honeycomb_block
+    - crimson_planks
+    - warped_planks
+    - crimson_stem
+    - warped_stem
+    - stripped_crimson_stem
+    - stripped_warped_stem
+    - stripped_crimson_hyphae
+    - stripped_warped_hyphae
+    - crimson_hyphae
+    - warped_hyphae
+    - polished_basalt
+    - cracked_nether_bricks
+    - chiseled_nether_bricks
+    - shroomlight
+    - lodestone
+    - target
+    - polished_blackstone
+    - chiseled_polished_blackstone
+    - polished_blackstone_bricks
+    - cracked_polished_blackstone_bricks
+    - amethyst_block
+    - calcite
+    - copper_block
+    - cut_copper
+    - dripstone_block
+    - exposed_copper
+    - exposed_cut_copper
+    - oxidized_copper
+    - oxidized_cut_copper
+    - "#candles"
+    - waxed_copper_block
+    - waxed_cut_copper
+    - waxed_exposed_copper
+    - waxed_exposed_cut_copper
+    - waxed_weathered_copper
+    - waxed_weathered_cut_copper
+    - weathered_copper
+    - weathered_cut_copper
+    - lightning_rod
+    - chain
+    - string
+    - tinted_glass
+
+forbiddenBlocks:
+    - piston_head
+
+canFly: true
+canCruise: false
+collisionExplosion: 0.0
+allowHorizontalMovement: false
+allowVerticalMovement: true
+canStaticMove: true
+maxStaticMove: 2
+detectionMultiplier: 30.0
+underwaterDetectionMultiplier: 3.0
+speed: 5.0
+tryNudge: false
+sinkPercent: 99.0
+```
+### Factory
+```yaml
+name: Factory
+maxSize: 12000
+minSize: 1
+allowedBlocks:
+    - "#planks"
+    - "#logs"
+    - "#glass"
+    - "#glass_panes"
+    - lapis_block
+    - dispenser
+    - note_block
+    - "#beds"
+    - sticky_piston
+    - piston
+    - observer
+    - "#wool"
+    - gold_block
+    - iron_block
+    - "#slabs"
+    - bricks
+    - bookshelf
+    - torch
+    - wall_torch
+    - fire
+    - "#stairs"
+    - "#chests"
+    - redstone_wire
+    - diamond_block
+    - crafting_table
+    - furnace
+    - blast_furnace
+    - smoker
+    - "#signs"
+    - "#doors"
+    - ladder
+    - lever
+    - "#pressure_plates"
+    - redstone_torch
+    - redstone_wall_torch
+    - "#buttons"
+    - "#fences"
+    - netherrack
+    - glowstone
+    - cake
+    - repeater
+    - "#trapdoors"
+    - "#stone_bricks"
+    - iron_bars
+    - "#fence_gates"
+    - nether_brick
+    - enchanting_table
+    - brewing_stand
+    - cauldron
+    - end_stone
+    - dragon_egg
+    - redstone_lamp
+    - ender_chest
+    - tripwire_hook
+    - tripwire
+    - emerald_block
+    - beacon
+    - "#walls"
+    - flower_pot
+    - "#heads"
+    - "#anvil"
+    - comparator
+    - daylight_detector
+    - redstone_block
+    - hopper
+    - quartz_block
+    - chiseled_quartz_block
+    - quartz_pillar
+    - smooth_quartz
+    - activator_rail
+    - dropper
+    - "#terracotta"
+    - "#concrete"
+    - slime_block
+    - "#wool_carpets"
+    - coal_block
+    - end_stone_bricks
+    - bell
+    - cartography_table
+    - composter
+    - fletching_table
+    - grindstone
+    - lantern
+    - lectern
+    - loom
+    - smithing_table
+    - stonecutter
+    - deepslate_bricks
+    - deepslate_tiles
+    - chiseled_deepslate
+    - polished_deepslate
+    - cracked_deepslate_tiles
+    - cracked_deepslate_bricks
+    - polished_blackstone
+    - polished_andesite
+    - polished_granite
+    - tuff
+    - polished_diorite
+    - tnt 
+    - end_rod
+    - diamond_block
+    - netherite_block
+    - smooth_sandstone
+    - prismarine
+    - prismarine_bricks
+    - dark_prismarine
+    - sea_lantern
+    - red_nether_bricks
+    - magma_block
+    - barrel
+    - white_banner
+    - orange_banner
+    - magenta_banner
+    - light_blue_banner
+    - yellow_banner
+    - lime_banner
+    - pink_banner
+    - gray_banner
+    - light_gray_banner
+    - cyan_banner
+    - purple_banner
+    - blue_banner
+    - brown_banner
+    - green_banner
+    - red_banner
+    - black_banner
+    - scaffolding
+    - honey_block
+    - honeycomb_block
+    - crimson_planks
+    - warped_planks
+    - crimson_stem
+    - warped_stem
+    - stripped_crimson_stem
+    - stripped_warped_stem
+    - stripped_crimson_hyphae
+    - stripped_warped_hyphae
+    - crimson_hyphae
+    - warped_hyphae
+    - polished_basalt
+    - cracked_nether_bricks
+    - chiseled_nether_bricks
+    - shroomlight
+    - lodestone
+    - target
+    - polished_blackstone
+    - chiseled_polished_blackstone
+    - polished_blackstone_bricks
+    - cracked_polished_blackstone_bricks
+    - amethyst_block
+    - calcite
+    - copper_block
+    - cut_copper
+    - dripstone_block
+    - exposed_copper
+    - exposed_cut_copper
+    - oxidized_copper
+    - oxidized_cut_copper
+    - "#candles"
+    - waxed_copper_block
+    - waxed_cut_copper
+    - waxed_exposed_copper
+    - waxed_exposed_cut_copper
+    - waxed_weathered_copper
+    - waxed_weathered_cut_copper
+    - weathered_copper
+    - weathered_cut_copper
+    - lightning_rod
+    - chain
+    - string
+    - tinted_glass
+    - campfire
+    - hay_block
+
+forbiddenBlocks:
+    - piston_head
+
+canCruise: false
+cruiseSkipBlocks: 0
+cruiseSpeed: 0
+canFly: false
+sinkPercent: 65.0
+overallSinkPercent: 60.0
+requireWaterContact: false
+allowVerticalMovement: false
+fuelBurnRate: 0
+speed: 0
+tryNudge: false
+```
+### Fighter
+```yaml
+name: Fighter
+maxSize: 350
+minSize: 100
+allowedBlocks:
+    - "#planks"
+    - "#logs"
+    - "#glass"
+    - "#glass_panes"
+    - lapis_block
+    - dispenser
+    - note_block
+    - sticky_piston
+    - piston
+    - observer
+    - "#wool"
+    - gold_block
+    - iron_block
+    - "#slabs"
+    - bricks
+    - bookshelf
+    - torch
+    - wall_torch
+    - fire
+    - "#stairs"
+    - "#chests"
+    - redstone_wire
+    - diamond_block
+    - crafting_table
+    - furnace
+    - blast_furnace
+    - smoker
+    - "#signs"
+    - "#doors"
+    - ladder
+    - lever
+    - "#pressure_plates"
+    - redstone_torch
+    - redstone_wall_torch
+    - "#buttons"
+    - "#fences"
+    - glowstone
+    - cake
+    - repeater
+    - "#trapdoors"
+    - "#stone_bricks"
+    - iron_bars
+    - "#fence_gates"
+    - nether_brick
+    - enchanting_table
+    - brewing_stand
+    - cauldron
+    - end_stone
+    - dragon_egg
+    - redstone_lamp
+    - ender_chest
+    - tripwire_hook
+    - tripwire
+    - emerald_block
+    - beacon
+    - "#walls"
+    - flower_pot
+    - "#heads"
+    - "#anvil"
+    - comparator
+    - daylight_detector
+    - redstone_block
+    - hopper
+    - quartz_block
+    - chiseled_quartz_block
+    - quartz_pillar
+    - smooth_quartz
+    - activator_rail
+    - dropper
+    - "#terracotta"
+    - slime_block
+    - "#wool_carpets"
+    - coal_block
+    - end_stone_bricks
+    - bell
+    - cartography_table
+    - composter
+    - fletching_table
+    - grindstone
+    - lantern
+    - lectern
+    - loom
+    - smithing_table
+    - stonecutter
+    - deepslate_bricks
+    - deepslate_tiles
+    - chiseled_deepslate
+    - polished_deepslate
+    - cracked_deepslate_tiles
+    - cracked_deepslate_bricks
+    - polished_blackstone
+    - polished_andesite
+    - polished_granite
+    - tuff
+    - polished_diorite
+    - tnt 
+    - end_rod
+    - diamond_block
+    - netherite_block
+    - smooth_sandstone
+    - prismarine
+    - prismarine_bricks
+    - dark_prismarine
+    - sea_lantern
+    - red_nether_bricks
+    - magma_block
+    - barrel
+    - white_banner
+    - orange_banner
+    - magenta_banner
+    - light_blue_banner
+    - yellow_banner
+    - lime_banner
+    - pink_banner
+    - gray_banner
+    - light_gray_banner
+    - cyan_banner
+    - purple_banner
+    - blue_banner
+    - brown_banner
+    - green_banner
+    - red_banner
+    - black_banner
+    - scaffolding
+    - honey_block
+    - honeycomb_block
+    - crimson_planks
+    - warped_planks
+    - crimson_stem
+    - warped_stem
+    - stripped_crimson_stem
+    - stripped_warped_stem
+    - stripped_crimson_hyphae
+    - stripped_warped_hyphae
+    - crimson_hyphae
+    - warped_hyphae
+    - polished_basalt
+    - cracked_nether_bricks
+    - chiseled_nether_bricks
+    - shroomlight
+    - lodestone
+    - target
+    - polished_blackstone
+    - chiseled_polished_blackstone
+    - polished_blackstone_bricks
+    - cracked_polished_blackstone_bricks
+    - amethyst_block
+    - calcite
+    - copper_block
+    - cut_copper
+    - dripstone_block
+    - exposed_copper
+    - exposed_cut_copper
+    - oxidized_copper
+    - oxidized_cut_copper
+    - "#candles"
+    - waxed_copper_block
+    - waxed_cut_copper
+    - waxed_exposed_copper
+    - waxed_exposed_cut_copper
+    - waxed_weathered_copper
+    - waxed_weathered_cut_copper
+    - weathered_copper
+    - weathered_cut_copper
+    - lightning_rod
+    - chain
+    - string
+    - tinted_glass
+
+forbiddenBlocks:
+    - piston_head
+    - obsidian
+
+CanDirectControl: true
+canFly: true
+rotateAtMidpoint: true
+canCruise: true
+cruiseSpeed: 10
+cruiseSkipBlocks: 5
+maxHeightLimit: 300
+maxHeightAboveGround: 320
+collisionExplosion: 0
+fuelBurnRate: 3.0
+explodeOnCrash: 1.5
+sinkSpeed: 5.0
+overallSinkPercent: 85.0
+detectionMultiplier: 20.0
+underwaterDetectionMultiplier: 2.0
+smokeOnSink: 3
+keepMovingOnSink: true
+speed: 50.0
+tryNudge: false
+sinkPercent: 85.0
+flyblocks:
+    ["#slabs"]:
+        - 30.0
+        - 100.0
+    redstone_lamp:
+        - 2.0
+        - 100.0
+    ["#chests", hopper, dispenser, dropper]:
+        - 0.0
+        - 2.0
+```
+### LaunchTorpedo
+```yaml
+name: LaunchTorpedo
+maxSize: 6
+minSize: 2
+allowedBlocks: 
+    - coal_block
+
+canCruise: true
+cruiseOnPilot: true
+focusedExplosion: true
+mustBeSubcraft: true
+cruiseSkipBlocks: 1
+cruiseSpeed: 60
+canFly: false
+minHeightLimit: 0
+maxHeightLimit: 320
+detectionMultiplier: 40.0
+underwaterDetectionMultiplier: 4.0
+collisionExplosion: 5.0
+explodeOnCrash: 5.0
+moveEntities: false
+speed: 60
+tryNudge: false
+sinkPercent: 99.0
+overallSinkPercent: 99.0
+flyblocks:
+    coal_block:
+        - 10.0
+        - 100.0
+passthroughBlocks:
+    - kelp_plant
+    - seagrass
+    - kelp
+    - tall_seagrass
+    - bubble_column
+```
+### Tank
+```yaml
+name: Tank
+maxSize: 100000
+minSize: 0
+allowedBlocks: 
+    - "#concrete"
+    - "#planks"
+    - "#slabs"
+    - iron_block
+    - "#buttons"
+    - "#chests"
+    - barrel
+    - "#wool_carpets"
+    - "#glass"
+    - "#glass_panes"
+    - ladder
+    - lever
+    - redstone
+    - repeater
+    - comparator
+    - redstone_torch
+    - redstone_block
+    - dispenser
+    - dropper
+    - hopper
+    - observer
+    - redstone_lamp
+    - "#signs"
+    - coal_block
+    - "#wool"
+    - furnace
+    - torch
+
+canCruise: true 
+speed: 1.0
+canHover: true
+useGravity: true
+hoverLimit: 0
+
+forbiddenHoverOverBlocks:
+  - water
+  - lava
+
+fuelBurnRate: 1.0
+ 
+harvestBlocks: 
+  - grass
+  - cornflower
+  - "#saplings"
+  - fern
+  - dead_bush
+  - dandelion
+  - poppy
+  - blue_orchid
+  - allium
+  - azure_bluet
+  - red_tulip
+  - orange_tulip
+  - white_tulip
+  - pink_tulip
+  - oxeye_daisy
+  - lily_of_the_valley
+  - sugar_cane
+  - cactus
+  - wither_rose
+  - vine
+  - tall_grass
+  - large_fern
+  - sunflower
+  - lilac
+  - rose_bush
+  - peony
+  - melon
+  - pumpkin
+
+flyblocks:
+    redstone_lamp:
+      - 5.0
+      - 100.0
+```
+### Train
+```yaml
+name: Train
+maxSize: 100000
+minSize: 50
+
+allowedBlocks: 
+    - "#concrete"
+    - "#planks"
+    - "#slabs"
+    - "#stairs"
+    - "#signs"
+    - "#doors"
+    - "#trapdoors"
+    - "#wool_carpets"
+    - "#fence_gates"
+    - ladder
+    - lever
+    - "#pressure_plates"
+    - furnace
+    - blast_furnace
+    - fire
+    - "#chests"
+    - "#beds"
+    - "#walls"
+    - "#glass"
+    - "#glass_panes"
+    - crafting_table
+    - repeater
+    - redstone
+    - "redstone_lamp"
+    - comparator
+    - iron_block
+    - "#buttons"
+    - torch
+    - wall_torch
+    - "#banners"
+    - hopper
+    - dispenser
+    - dropper
+    - redstone_wire
+
+flyblocks:
+    ["#chests", hopper, dispenser, dropper]:
+               - 0.0
+               - 5.0
+    redstone_lamp:
+               - 5.0
+               - 100.0
+
+canFly: false
+canCruise: true 
+speed: 7.5
+canHover: false 
+hoverLimit: 0
+useGravity: true
+allowVerticalMovement: false
+fuelBurnRate: 0.5 
+staticWaterLevel: -64
+
+forbiddenHoverOverBlocks:
+    - "#concrete"
+    - "#planks"
+    - "#slabs"
+    - "#stairs"
+    - "#signs"
+    - "#doors"
+    - "#trapdoors"
+    - "#wool_carpets"
+    - "#fence_gates"
+    - ladder
+    - lever
+    - "#pressure_plates"
+    - furnace
+    - blast_furnace
+    - fire
+    - "#chests"
+    - "#beds"
+    - "#walls"
+    - "#glass"
+    - "#glass_panes"
+    - crafting_table
+    - repeater
+    - redstone
+    - "redstone_lamp"
+    - comparator
+    - "#logs"
+    - grass_block
+    - dirt
+    - podzol
+    - dirt_path
+    - mycelium
+    - cobblestone
+    - cobweb
+    - composter
+    - copper_block
+    - copper_ore
+    - cracked_deepslate_bricks
+    - cracked_deepslate_tiles
+    - deepslate
+    - cracked_nether_bricks
+    - cracked_polished_blackstone_bricks
+    - cracked_stone_bricks
+    - nether_bricks
+    - netherrack
+    - obsidian
+    - crying_obsidian
+    - cut_red_sandstone
+    - dark_prismarine 
+    - prismarine
+    - daylight_detector
+    - dead_brain_coral
+    - dead_brain_coral_block
+    - dead_brain_coral_fan
+    - dead_bubble_coral
+    - dead_bubble_coral_block
+    - dead_horn_coral_block
+    - dead_tube_coral_block
+    - deepslate_coal_ore
+    - deepslate_copper_ore
+    - deepslate_diamond_ore
+    - deepslate_emerald_ore
+    - deepslate_gold_ore
+    - deepslate_iron_ore
+    - deepslate_lapis_ore
+    - deepslate_redstone_ore
+    - deepslate_tiles
+    - detector_rail
+    - diorite
+    - dispenser
+    - dried_kelp_block
+    - emerald_block
+    - emerald_ore
+    - end_gateway
+    - end_portal_frame
+    - end_stone
+    - exposed_copper
+    - farmland
+    - fern
+    - fire_coral_block
+    - fletching_table
+    - flower_pot
+    - flowering_azalea 
+    - "#leaves"
+    - gilded_blackstone
+    - glowstone
+    - gold_block
+    - granite
+    - gravel
+    - "#wool"
+    - hay_block
+    - honey_block
+    - honeycomb_block
+    - hopper
+    - iron_block
+    - jukebox
+    - kelp
+    - lapis_block
+    - lapis_ore
+    - large_fern
+    - lava
+    - lectern
+    - loom
+    - lodestone
+    - magma_block
+    - moss_block 
+    - mud
+    - mud_bricks
+    - nether_quartz_ore
+    - nether_wart_block
+    - packed_mud
+    - pearlescent_froglight
+    - piston
+    - piston_head
+    - pointed_dripstone
+    - polished_andesite
+    - polished_blackstone
+    - polished_blackstone_bricks
+    - polished_diorite
+    - polished_granite
+    - prismarine_bricks
+    - pumpkin
+    - purpur_block
+    - quartz
+    - quartz_block
+    - quartz_pillar
+    - raw_copper_block 
+    - raw_gold_block
+    - raw_iron_block
+    - red_mushroom_block
+    - red_nether_bricks
+    - redstone_block
+    - redstone_ore
+    - reinforced_deepslate
+    - respawn_anchor
+    - sand
+    - sandstone
+    - scaffolding
+    - sea_lantern
+    - seagrass
+    - shroomlight
+    - slime_block
+    - smithing_table
+    - smoker
+    - smooth_basalt
+    - smooth_quartz
+    - smooth_red_sandstone
+    - smooth_sandstone
+    - smooth_stone
+    - snow_block
+    - snow
+    - soul_sand
+    - sponge
+    - spore_blossom
+    - sticky_piston
+    - stone_bricks
+    - water
+    - waxed_copper_block
+    - wet_sponge
+```
+### Turret
+```yaml
+name: Turret
+maxSize: 1000
+minSize: 1
+allowedBlocks:
+    - water
+    - lava
+    - "#logs"
+    - "#glass"
+    - dispenser
+    - note_block
+    - "#beds"
+    - sticky_piston
+    - piston
+    - piston_head
+    - light_gray_wool
+    - gold_block
+    - "#slabs"
+    - bookshelf
+    - torch
+    - wall_torch
+    - "#wooden_stairs"
+    - nether_brick_stairs
+    - "#chests"
+    - redstone_wire
+    - diamond_block
+    - iron_block
+    - crafting_table
+    - furnace
+    - blast_furnace
+    - smoker
+    - "#signs"
+    - "#doors"
+    - ladder
+    - lever
+    - "#pressure_plates"
+    - "#buttons"
+    - "#fences"
+    - glowstone
+    - cake
+    - repeater
+    - "#wooden_trapdoors"
+    - iron_bars
+    - "#fence_gates"
+    - brewing_stand
+    - cauldron
+    - redstone_lamp
+    - ender_chest
+    - tripwire_hook
+    - tripwire
+    - emerald_block
+    - beacon
+    - flower_pot
+    - "#heads"
+    - "#anvil"
+    - comparator
+    - daylight_detector
+    - redstone_block
+    - hopper
+    - activator_rail
+    - dropper
+    - gray_terracotta
+    - light_gray_terracotta
+    - black_terracotta
+    - gray_concrete
+    - light_gray_concrete
+    - black_concrete
+    - slime_block
+    - "#wool_carpets"
+    - end_stone_bricks
+
+canFly: true
+canCruise: false
+maxHeightLimit: 144
+collisionExplosion: 0.0
+explodeOnCrash: 2.0
+allowHorizontalMovement: false
+allowVerticalMovement: false
+speed: 1.0
+tryNudge: false
+sinkPercent: 99.0
+```
