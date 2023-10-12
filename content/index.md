@@ -23,6 +23,27 @@ YouTube: https://www.youtube.com/channel/UCgKdXTsb9GsChzoye8ru2zQ
 ### **Flavor**
 [[Big Doors]] - Make drawbridges, sliding doors, elevators, and portcullis.
 
+[[Better Chairs]] - Sit your ass down
+
+[[Brewery]] - Get drunk with your friends
+
+[[Robbing]] - For the pickpockets and safecrackers
+
+[[Seasons]] - Much needed variety
+
+[[MyDog]] - Wolves get an upgrade
+
 ### Utilities
 [[Proximity Voice Chat]] - Get put in a discord voice-chat with people you come close to in-game.
+
+[[Combat Log]] - To deal with pesky combat-loggers
+
+[[AntiFarm]] - To deal with peskier afk-farmers
+
+[[Sign Shop]] - Get rich while you're offline
+
+[[Dynmap]] - Spy on your friends and enemies
+
+[[Total War Border]] - Keeps us all in the map
+
 
