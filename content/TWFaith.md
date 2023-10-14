@@ -7,6 +7,49 @@ Total War: Faith is a custom plugin that allows players to create religions. The
 ## Usage
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CMLi7lwL1Ec?si=4fiY3R6BBilrH5OK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+# Powers
+## Blessings
+Blessings are powers the god unlocks that directly benefits the followers.
+### Divine Intervention (Trigger) (AoE)
+Launches all followers within 30 blocks of the god into the air and gives them the glide effect until they hit the ground.
+### Hell's Fury (Toggle) (AoE)
+All followers within 30 blocks gain immunity to fire damage, and they spread fire wherever they move for the duration the power is active. Followers that leave the 30 block radius will still spread fire until the power ends, but followers outside the radius must enter before gaining the blessing.
+### Mana (Trigger) (AoE)
+Gives players within 30 blocks 16 bread.
+### Powerful Flock (Toggle) (AoE)
+The god and every follower within 30 blocks of the god gains a half heart of health for every other follower within 30 blocks of the god, including the god. With just the god and one follower nearby, this means both the god and the follower gain a half heart of health. 
+### Summon God (Toggle)
+While the god has this power active, followers can use the command `/faith summon` to request the god to teleport to them. The god can accept with `/faith accept`. Teleportation has a cooldown of 20 minutes per follower, and the god cannot return to their original location by teleportation unless another follower is there to summon them.
+### Terrain Bonus (Toggle) (Server-Wide)
+The terrain bonus power gives all followers on the server a potion effect when they are in the god's chosen terrain. The power selection menu allows the god to match any of the available potion effects with any of the terrain groups, provided they have unlocked both in the upgrade menu. 
+
+Example: Give strength to all followers in Cold biomes.
+## God Powers
+God powers only affect the god.
+### Lion's Heart (Toggle)
+The god gains strength 0-4 depending on how many pieces of armor they are wearing. Wearing no armor gives strength 4 while wearing a full set of armor results in no strength bonus. Tools, weapons, and shields do not affect this power.
+### Savior (Toggle) (Trigger) (AoE)
+While this power is active, if a follower within 30 blocks has his health reduced to less than 3 hearts, and the god has at least 5 hearts of health, the follower and the god will swap places.
+### Taunt (Trigger)
+All heathens in a 30 block radius of the god suffer the hunger effect, and the god gains the glowing status effect. The heathens suffer hunger until they hit the god or the power runs out.
+### Insidious (Toggle)
+The god gains the invisibility potion effect when shifting. Only drains power when the god is invisible.
+### Explosive Landing (Toggle) (Trigger)
+Converts fall damage into an explosion. The larger the fall damage, the larger the explosion, up to a max due to the server crashing. Max value can be found in config under "explosive-max-mag".
+### Flood (Trigger) (AoE)
+In a 30-block radius around the god, the highest block in the world gets a water block above it, flooding the area for 30 seconds before disappearing. Due to this power only spawning water above the highest blocks around the player, it is not effective underground or inside buildings.
+## Curses
+### Crumbling (Toggle) (AoE)
+Heathens in a 30-block radius take 10x durability damage on their armor, weapons, and tools.
+### Discombobulation (Trigger) (AoE)
+Heathens in a 30-block radius have their inventories scrambled.
+### Entangle (Trigger) (AoE)
+Heathens in a 30-block radius are encased in trees. This power only works in biomes where trees naturally spawn, and the type of tree depends on the biome.
+### Heavy Boots (Toggle) (AoE)
+Heathens in a 30-block radius gain slowness while wearing boots.
+### Intoxicate (Toggle) (AoE)
+Heathens in a 30-block radius gain nausea.
+
 ## Configuration
 ```yaml
 # TWFaith Config File

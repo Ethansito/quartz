@@ -34,7 +34,7 @@ YouTube: https://www.youtube.com/channel/UCgKdXTsb9GsChzoye8ru2zQ
 [[MyDog]] - Wolves get an upgrade
 
 ### Utilities
-[[Proximity Voice Chat]] - Get put in a discord voice-chat with people you come close to in-game.
+[[DiscordSRV]] - Get put in a discord voice-chat with people you come close to in-game.
 
 [[Combat Log]] - To deal with pesky combat-loggers
 
