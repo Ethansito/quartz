@@ -16,10 +16,10 @@ Config: This should answer most questions not answered by the video, such as "wh
 # Welcome to the TWClaim Config!
 # List of materials that can be used for reinforcement and how many reinforcement points they give
 reinforcements:
-  - stone: 100
-  - coal: 150
-  - iron_ingot: 250
-  - diamond: 500
+  - stone: 200
+  - coal: 300
+  - iron_ingot: 500
+  - diamond: 1000
 
 # Reinforcement value subtracted when a block is blown up
 explosion-damage: 10
