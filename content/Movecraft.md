@@ -6,6 +6,7 @@ title: Movecraft
 Movecraft allows players to build large-multiblock vehicles that can move, transport resources, and fight! They are compatible with [[Cannons]].
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/VVbtCEfgpQY?si=I1H4EE9cpPjL4PpD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Usage
 
 Wiki: [https://github.com/APDevTeam/Movecraft/wiki](https://github.com/APDevTeam/Movecraft/wiki) Basic tutorial. Note: Dinghy is no longer a craft on Total War.

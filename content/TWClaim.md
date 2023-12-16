@@ -10,6 +10,7 @@ TWClaim is the plugin that allows players to form groups and protect land agains
 Tutorial Video: This video showcases all of the commands and how to use them to claim land and manage your tribe.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/elI8LY0Fu6Y?si=wH7tNhI3Fihct0IK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Important Info Not In The Video
 
 ### Bastion
@@ -31,6 +32,29 @@ Before a range extender can be used, it must be reinforced, fortified, or claime
 To assign a bastion to a range extender, right click the range extender to open up a selection menu. You will be able to select any bastion that belongs to you or any bastion that belongs to a tribe that gives you bastion permissions.
 
 ![[Pasted image 20231204231848.png]]
+
+## Protecting Buildings
+This section covers how to protect your builds (or anything you don't want broken). There are three ways of going about this. Each method has the same resource cost and the same protection applied. The one you use is a matter of preference/convenience. To leave the protection mode, simply type the command again to toggle off. 
+
+### Reinforcing
+Reinforcing is for when you want to protect blocks that have already been placed. Do `/tribe reinforce [tribe name]` to enter reinforcing mode. You can also do `/tribe reinforce` to reinforce to your private group, which only you have access to. This personal claiming mode works with the other commands too.
+
+Once you are in reinforcing mode, hold the [[TWClaim#Config:|reinforcement material]] in your hand and right click the block you want to reinforce. If you want to claim an area of blocks, you can hold down right click while looking at each block you want to reinforce. If you try to reinforce a block that is already protected, you will be notified in chat, and you will keep the reinforcement material.
+
+### Fortifying
+Fortifying lets you protect blocks as you place them, which can be useful if you do not want to worry about whether you have protected what you have built. Simply hold the [[TWClaim#Config:|reinforcement material]] in your inventory and do `/tribe fortify [tribe name]` to enter fortifying mode. Personal claiming: `/tribe fortify`
+
+Once you are in fortifying mode, place the blocks you want, and the materials for protecting them will be taken out of your inventory automatically. If you run out of materials to protect your blocks, you will be unable to place more blocks and be notified in chat. 
+
+### Claiming
+Claiming allows you to claim a volume of blocks that has already been placed, including air blocks. This is the only claiming method which allows you to claim air blocks. Do `/tribe claim [tribe name]`. Personal: `/tribe claim`.
+
+Once you are in claiming mode, you will need to select the corners of the volume of blocks you want to protect. Left click a block to mark it as the first corner, and right click the second block to mark it as the second corner. You will receive messages in chat telling you the coordinates of the blocks you picked for the corners. If you selected the wrong block, just left or right click again to reselect the corner.
+
+Once you are ready to protect the blocks, do `/tribe claim confirm`. If you have enough [[TWClaim#Config:|reinforcement materials]] in your inventory to protect the whole volume, they will be removed from your inventory, and the whole volume will be protected immediately. If you do not have enough to claim the whole volume, the claim will fail, and you will receive a chat message explaining that you do not have enough materials.
+
+#### Multiple Material Claiming
+There may be a rare case where you do not have enough of one type of material to claim the whole volume, but you do have enough of several types to claim the volume. However, using materials of different strengths to reinforce a volume would lead to inconsistencies in the protection of the blocks. If this situation happens, you will be asked to confirm that you want to claim the volume with multiple materials. Click the green confirm text in the message to confirm.
 
 ## Config: 
 This should answer most questions not answered by the video, such as "what are the reinforcement and fuel materials?".
