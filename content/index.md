@@ -33,8 +33,11 @@ YouTube: https://www.youtube.com/channel/UCgKdXTsb9GsChzoye8ru2zQ
 
 [[MyDog]] - Wolves get an upgrade
 
+[[Image Frame]] - Import images and gifs to Minecraft
 ### Utilities
 [[DiscordSRV]] - Get put in a discord voice-chat with people you come close to in-game.
+
+[[Interactive Chat]] - Spice up your communication
 
 [[Combat Log]] - To deal with pesky combat-loggers
 
@@ -45,5 +48,7 @@ YouTube: https://www.youtube.com/channel/UCgKdXTsb9GsChzoye8ru2zQ
 [[Dynmap]] - Spy on your friends and enemies
 
 [[Total War Border]] - Keeps us all in the map
+
+[[Chest Sorting]] - Automagical
 
 

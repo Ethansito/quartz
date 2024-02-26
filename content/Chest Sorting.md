@@ -1,0 +1,1 @@
+To automagically sort your chests, put a button next to the chest you want to sort and press the button.
