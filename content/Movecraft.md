@@ -225,13 +225,17 @@ flyblocks:
     ["#chests", hopper, dispenser, dropper]:
         - 0.0
         - 2.0
-
+moveblocks:
+    [redstone_lamp, redstone_block]
+        - 2.0
+        - 100.0
 passthroughBlocks:
     - kelp_plant
     - seagrass
     - kelp
     - tall_seagrass
     - bubble_column
+onlyMovePlayers: false
 ```
 ### Boat
 ```yaml
@@ -408,6 +412,8 @@ allowedBlocks:
     - chain
     - string
     - tinted_glass
+    - "#banners"
+    - "#beds"
 
 forbiddenBlocks:
     - piston_head
@@ -445,13 +451,13 @@ passthroughBlocks:
     - kelp
     - tall_seagrass
     - bubble_column
-
+onlyMovePlayers: false
 ```
 ### Bomber
 ```yaml
 name: Bomber
-maxSize: 500
-minSize: 351
+maxSize: 1000
+minSize: 501
 allowedBlocks:
     - "#planks"
     - "#logs"
@@ -523,7 +529,6 @@ allowedBlocks:
     - smooth_quartz
     - activator_rail
     - dropper
-    - "#terracotta"
     - slime_block
     - "#wool_carpets"
     - coal_block
@@ -622,6 +627,7 @@ allowedBlocks:
     - chain
     - string
     - tinted_glass
+    - "#glazed_terracotta"
 
 forbiddenBlocks:
     - piston_head
@@ -647,7 +653,7 @@ speed: 40.0
 tryNudge: false
 sinkPercent: 85.0
 flyblocks:
-    ["#slabs"]:
+    ["#wool"]:
         - 40.0
         - 100.0
     redstone_lamp:
@@ -656,6 +662,7 @@ flyblocks:
     ["#chests", hopper, dispenser, dropper]:
         - 0.0
         - 3.0
+onlyMovePlayers: false
 ```
 ### Cargo Ship
 ```yaml
@@ -868,13 +875,17 @@ flyblocks:
     ["black_wool"]:
         - 0.0
         - 0.5
+moveblocks:
+    [redstone_lamp, redstone_block]
+        - 2.0
+        - 100.0
 passthroughBlocks:
     - kelp_plant
     - seagrass
     - kelp
     - tall_seagrass
     - bubble_column
-```
+onlyMovePlayers: false```
 ### Corvette
 ```yaml
 name: Corvette
@@ -1085,12 +1096,17 @@ flyblocks:
     ["#chests", hopper, dispenser, dropper]:
         - 0.0
         - 2.0
+moveblocks:
+    [redstone_lamp, redstone_block]
+        - 2.0
+        - 100.0
 passthroughBlocks:
     - kelp_plant
     - seagrass
     - kelp
     - tall_seagrass
     - bubble_column
+onlyMovePlayers: false
 ```
 ### Destroyer
 ```yaml
@@ -1300,12 +1316,17 @@ flyblocks:
     ["#chests", hopper, dispenser, dropper]:
         - 0.0
         - 2.0
+moveblocks:
+    [redstone_lamp, redstone_block]
+        - 2.0
+        - 100.0
 passthroughBlocks:
     - kelp_plant
     - seagrass
     - kelp
     - tall_seagrass
     - bubble_column
+onlyMovePlayers: false
 ```
 ### Elevator
 ```yaml
@@ -1486,7 +1507,7 @@ forbiddenBlocks:
     - piston_head
 
 canFly: true
-canCruise: false
+canCruise: true
 collisionExplosion: 0.0
 allowHorizontalMovement: false
 allowVerticalMovement: true
@@ -1497,6 +1518,7 @@ underwaterDetectionMultiplier: 3.0
 speed: 5.0
 tryNudge: false
 sinkPercent: 99.0
+onlyMovePlayers: false
 ```
 ### Factory
 ```yaml
@@ -1692,11 +1714,11 @@ allowVerticalMovement: false
 fuelBurnRate: 0
 speed: 0
 tryNudge: false
-```
+onlyMovePlayers: false```
 ### Fighter
 ```yaml
 name: Fighter
-maxSize: 350
+maxSize: 500
 minSize: 100
 allowedBlocks:
     - "#planks"
@@ -1867,6 +1889,7 @@ allowedBlocks:
     - chain
     - string
     - tinted_glass
+    - "#glazed_terracotta"
 
 forbiddenBlocks:
     - piston_head
@@ -1893,15 +1916,15 @@ speed: 50.0
 tryNudge: false
 sinkPercent: 85.0
 flyblocks:
-    ["#slabs"]:
+    ["#wool"]:
         - 30.0
-        - 100.0
-    redstone_lamp:
-        - 2.0
         - 100.0
     ["#chests", hopper, dispenser, dropper]:
         - 0.0
         - 2.0
+    redstone_lamp:
+        - 2.0
+        - 100.0
 ```
 ### LaunchTorpedo
 ```yaml
@@ -1942,9 +1965,19 @@ passthroughBlocks:
 ```
 ### Tank
 ```yaml
+# This is the name of the craft type.
+# To pilot this craft type, A sign needs to be put on the craft with this exact name.
 name: Tank
+
+# The Maximum size in blocks this crft type can be.
 maxSize: 100000
+
+# The minimum size in bocks this craft type can be.
 minSize: 0
+
+# This is a list of blocks, using their Block ID, you can make your craft out of.
+# If you have a block that isn't on the list, that block won't be part of your ship.
+# This could prevent your craft from being able to be piloted or possible being able to move, because it is blocking the ship. 
 allowedBlocks: 
     - "#concrete"
     - "#planks"
@@ -1975,9 +2008,28 @@ allowedBlocks:
     - torch
 
 canCruise: true 
+
+# Speed in metres per second. 
+# Maximum is 20.0, however 10.0 is recommended as the maximum for smooth movement and decent performance.
+# If this is a large craft it is recommended to keep this very low to avoid lag, and compensate for this using a cruiseSkipBlocks (see Advanced)
+# Important: you must have a trailing ".0" after the number here. IE: 5.0, not just 5
 speed: 1.0
+
+# Not Required, defaults to false. 
+# If set, (canHover: true) the craft can hover a certain distance above terrain.
+# Use this for a vehicle that should follow the contours of the landscape, for example a hovercraft or car.
 canHover: true
+
+# Not Required, defaults to false. 
+# If set, the vehicle will fall as it moves until it reaches its hoverLimit above the terrain. 
+# It will also cause any craft above its maxHeightLimit to fall. 
+# This can be used, among other things, to make torpedoes that can be dropped from aircraft and run underwater.
 useGravity: true
+
+# Not Required. 
+# If set, (hoverLimit: 0) it will control how high a craft can hover above the terrain. 
+# 0 is an acceptable value, and would be appropriate for cars or trains. 
+# There are performance implications to setting this too high, so a small number is recommended. 
 hoverLimit: 0
 
 forbiddenHoverOverBlocks:
@@ -1987,7 +2039,7 @@ forbiddenHoverOverBlocks:
 fuelBurnRate: 1.0
  
 harvestBlocks: 
-  - grass
+  - short_grass
   - cornflower
   - "#saplings"
   - fern
@@ -2016,10 +2068,21 @@ harvestBlocks:
   - melon
   - pumpkin
 
-flyblocks:
+
+# This is the type of block(s) that are required for the craft to be piloted.
+# Block Types are measured in percentages (Second - {num}) from your entire ship size that are required number of flyblocks your ship must have.
+# In the example below; If the total number of blocks in your craft equal 100. 25 of those blocks, but no more than 50, must be wool blocks. The rest can be any other allowedBlocks.
+# the example also shows Obsidian (Block 49) is not required, but can only have a maximum of 10% on the craft.
+moveblocks:
     redstone_lamp:
       - 5.0
       - 100.0
+
+# Multiple Flyblock entries, also supporting above meta data tags. Put them in brackets, ie:
+#["5:1","5:2","5:3",35]:
+#    - 55
+onlyMovePlayers: false
+#    - 100
 ```
 ### Train
 ```yaml
@@ -2067,6 +2130,7 @@ flyblocks:
     ["#chests", hopper, dispenser, dropper]:
                - 0.0
                - 5.0
+moveblocks:
     redstone_lamp:
                - 5.0
                - 100.0
@@ -2171,7 +2235,6 @@ forbiddenHoverOverBlocks:
     - granite
     - gravel
     - "#wool"
-    - hay_block
     - honey_block
     - honeycomb_block
     - hopper
@@ -2240,6 +2303,8 @@ forbiddenHoverOverBlocks:
     - water
     - waxed_copper_block
     - wet_sponge
+    - bedrock
+onlyMovePlayers: false
 ```
 ### Turret
 ```yaml
@@ -2323,4 +2388,5 @@ allowVerticalMovement: false
 speed: 1.0
 tryNudge: false
 sinkPercent: 99.0
+onlyMovePlayers: false
 ```

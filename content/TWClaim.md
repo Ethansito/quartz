@@ -83,9 +83,6 @@ base-consumption: 10
 # The amount of time (minutes) between fuel consumptions
 base-consumption-period: 20
 
-# Range of Bastion
-bastion-range: 30
-
 # Costs for bastion upgrades
 anti-flight:
   - diamond: 10
@@ -115,6 +112,7 @@ exp-storage:
   - diamond: 10
   - fuel consumption when active: 10
   - fuel per 100 points: 1
+
 
 # The min reinforcement percentage that reinforcement mats can be recovered when someone with perms breaks the block
 recover-min: 80
