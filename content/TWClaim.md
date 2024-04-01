@@ -14,7 +14,7 @@ Tutorial Video: This video showcases all of the commands and how to use them to 
 ## Important Info Not In The Video
 
 ### Bastion
-While reinforcing, fortifying, and claiming all protect blocks from being broken by other players, the bastion protects the land from being built on by other players. Additionally, upgrades can be purchased for the bastion that improve its defensive capabilities and utility. 
+While reinforcing, fortifying, and claiming all protect blocks from being broken by other players, as well as containers from being opened, buttons being pressed, etc., the bastion protects the land from being built on by other players. Additionally, upgrades can be purchased for the bastion that improve its defensive capabilities and utility. 
 
 The bastion requires fuel (see config for fuel types and values) and provides no protection when unfueled. Active upgrades cause the bastion to burn through fuel quicker. Purchased upgrades can be toggled off to reduce fuel consumption.
 
@@ -55,6 +55,26 @@ Once you are ready to protect the blocks, do `/tribe claim confirm`. If you have
 
 #### Multiple Material Claiming
 There may be a rare case where you do not have enough of one type of material to claim the whole volume, but you do have enough of several types to claim the volume. However, using materials of different strengths to reinforce a volume would lead to inconsistencies in the protection of the blocks. If this situation happens, you will be asked to confirm that you want to claim the volume with multiple materials. Click the green confirm text in the message to confirm.
+
+## Vaults
+Instead of lugging around all of your claiming materials in your inventory, you can create vaults to store your materials and use them remotely.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/StITOSYklSg?si=l2YfxnbtqCE_973I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### Creating a Vault
+To create a vault, first assign a person or tribe as the owner of a chest or trapped chest using reinforce, fortify, or claim. Then, put a sign on the chest with the first line saying "\[twclaim\]".
+
+### Using a Vault
+#### Vault Priority
+Vaults will pay for reinforcing, fortifying, and claiming before materials are taken from your inventory. If you are protecting blocks for a tribe, the materials will be taken from any and all vaults assigned to that tribe first, then any and all vaults assigned to your person, then your inventory. If you are protecting blocks to your person, materials in vaults assigned to your tribes will not be used. Only materials in vaults assigned to your person will be used if you are protecting blocks to your person. 
+
+#### Material Return
+Normally, when a player breaks a protected block they own, if the protection on the block has not been damaged too much, the material used to protect the block will drop along with the block.
+
+When a vault is used to protect a block, the block remembers the vault the material came from and will attempt to return the material to the vault if it is broken and meets the parameters for refunding the material. If the vault the material came from is full, this can lead to the item being deleted. If an item is deleted, the player will be alerted by a chat message that they need to create a new vault or clear space in old ones if they want to have the materials refunded.
+
+If the origin vault is full, before the item is deleted, the vault will scan the area in a radius around it (see config section) for other compatible vault. A compatible vault is one that is assigned to the same tribe or person as the origin vault. If there is a compatible vault in range of the origin vault, the item will be returned to that vault instead. 
+### Destroying a Vault
+To destroy a vault, simply destroy either the sign or the chest that the vault is assigned to. Remember that the vault will only be assigned to one chest block and one sign on the chest. Breaking the other chest block or other signs on the chest will not destroy the vault. 
 
 ## Config: 
 This should answer most questions not answered by the video, such as "what are the reinforcement and fuel materials?".
@@ -121,5 +141,8 @@ recover-min: 80
 map-radius: 4
 
 # The limit of blocks someone can select at once with the claim command
-claim-limit: 1000
+claim-limit: 1000000
+
+# The maximum distance that a full vault will check for another vault with space when an item needs to be returned.
+vault-max-trade-range: 100
 ```
