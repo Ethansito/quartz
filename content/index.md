@@ -20,6 +20,8 @@ YouTube: https://www.youtube.com/channel/UCgKdXTsb9GsChzoye8ru2zQ
 [[Movecraft]] - Get around the map with land, sea, and air vehicles
 
 [[Cannons]] - For blowing stuff up.
+
+[[NPCs]] - Raise an army!
 ### **Flavor**
 [[Big Doors]] - Make drawbridges, sliding doors, elevators, and portcullis.
 
@@ -27,7 +29,7 @@ YouTube: https://www.youtube.com/channel/UCgKdXTsb9GsChzoye8ru2zQ
 
 [[Brewery]] - Get drunk with your friends
 
-[[Robbing]] - For the pickpockets and safecrackers
+[[Robbing (No Longer on Server)]] - For the pickpockets and safecrackers
 
 [[Seasons]] - Much needed variety
 
