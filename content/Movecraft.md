@@ -885,7 +885,8 @@ passthroughBlocks:
     - kelp
     - tall_seagrass
     - bubble_column
-onlyMovePlayers: false```
+onlyMovePlayers: false
+```
 ### Corvette
 ```yaml
 name: Corvette
@@ -1714,7 +1715,8 @@ allowVerticalMovement: false
 fuelBurnRate: 0
 speed: 0
 tryNudge: false
-onlyMovePlayers: false```
+onlyMovePlayers: false
+```
 ### Fighter
 ```yaml
 name: Fighter
